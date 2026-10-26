@@ -16,7 +16,7 @@ include `dts/sm8250.dtsi`, and add `configs/sm8250.config` and patches/xnu/serie
 the ordered lists. From the UniXNU checkout:
 
 ```sh
-./unixnu defconfig cas_continuous_defconfig -D ../UniXNU-cas
+./unixnu defconfig cas_defconfig -D ../UniXNU-cas
 ./unixnu status --json -D ../UniXNU-cas
 ./unixnu tree -D ../UniXNU-cas
 ```
