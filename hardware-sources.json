@@ -1,7 +1,7 @@
 {
   "board": "cas",
   "scope": "CPU/GIC/timer resource descriptions only",
-  "source": "https://github.com/ht94911/UniXNU-cas/blob/6e3aef2b8f565402b77e52c485e25c7e90028696/config/cas-adt-facts.json",
+  "source": "https://github.com/ht94911/UniXNU-cas/blob/39550641fce059a44e7e8c0d8a011a1e15a853fa/config/cas-adt-facts.json",
   "source_sha256": "1f7cb91134bcc609201ad8f5c1d41cb1daccd66bb8dbb3ab45541f2b008ae60e",
   "gic": {
     "compatible": "arm,gic-v3",
