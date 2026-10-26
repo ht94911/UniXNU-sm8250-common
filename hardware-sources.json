@@ -1,0 +1,47 @@
+{
+  "board": "cas",
+  "scope": "CPU/GIC/timer resource descriptions only",
+  "source": "https://github.com/ht94911/UniXNU-cas/blob/6e3aef2b8f565402b77e52c485e25c7e90028696/config/cas-adt-facts.json",
+  "source_sha256": "1f7cb91134bcc609201ad8f5c1d41cb1daccd66bb8dbb3ab45541f2b008ae60e",
+  "gic": {
+    "compatible": "arm,gic-v3",
+    "distributor": {
+      "base": 396361728,
+      "size": 65536
+    },
+    "redistributor": {
+      "base": 396754944,
+      "size": 1048576
+    },
+    "redistributor_stride": 131072
+  },
+  "timer": {
+    "compatible": "arm,armv8-timer",
+    "frequency_hz": 19200000,
+    "interrupt_cells": [
+      1,
+      13,
+      65288,
+      1,
+      14,
+      65288,
+      1,
+      11,
+      65288,
+      1,
+      12,
+      65288
+    ],
+    "virtual_ppi": 27
+  },
+  "cpu_affinities": [
+    0,
+    256,
+    512,
+    768,
+    1024,
+    1280,
+    1536,
+    1792
+  ]
+}

@@ -1,0 +1,105 @@
+// SPDX-License-Identifier: BSD-2-Clause-Patent
+// Derived hardware values; no vendor source or firmware copied.
+/ {
+    #address-cells = <2>;
+    #size-cells = <2>;
+    cpus {
+        #address-cells = <1>;
+        #size-cells = <0>;
+        cpu0: cpu@0 {
+            unixnu,adt-name = "cpu0";
+            device_type = "cpu";
+            compatible = "qcom,kryo";
+            reg = <0x0>;
+            enable-method = "psci";
+            timebase-frequency = <19200000>;
+            status = "disabled";
+        };
+        cpu1: cpu@100 {
+            unixnu,adt-name = "cpu1";
+            device_type = "cpu";
+            compatible = "qcom,kryo";
+            reg = <0x100>;
+            enable-method = "psci";
+            timebase-frequency = <19200000>;
+            status = "disabled";
+        };
+        cpu2: cpu@200 {
+            unixnu,adt-name = "cpu2";
+            device_type = "cpu";
+            compatible = "qcom,kryo";
+            reg = <0x200>;
+            enable-method = "psci";
+            timebase-frequency = <19200000>;
+            status = "disabled";
+        };
+        cpu3: cpu@300 {
+            unixnu,adt-name = "cpu3";
+            device_type = "cpu";
+            compatible = "qcom,kryo";
+            reg = <0x300>;
+            enable-method = "psci";
+            timebase-frequency = <19200000>;
+            status = "disabled";
+        };
+        cpu4: cpu@400 {
+            unixnu,adt-name = "cpu4";
+            device_type = "cpu";
+            compatible = "qcom,kryo";
+            reg = <0x400>;
+            enable-method = "psci";
+            timebase-frequency = <19200000>;
+            status = "disabled";
+        };
+        cpu5: cpu@500 {
+            unixnu,adt-name = "cpu5";
+            device_type = "cpu";
+            compatible = "qcom,kryo";
+            reg = <0x500>;
+            enable-method = "psci";
+            timebase-frequency = <19200000>;
+            status = "disabled";
+        };
+        cpu6: cpu@600 {
+            unixnu,adt-name = "cpu6";
+            device_type = "cpu";
+            compatible = "qcom,kryo";
+            reg = <0x600>;
+            enable-method = "psci";
+            timebase-frequency = <19200000>;
+            status = "disabled";
+        };
+        cpu7: cpu@700 {
+            unixnu,adt-name = "cpu7";
+            device_type = "cpu";
+            compatible = "qcom,kryo";
+            reg = <0x700>;
+            enable-method = "psci";
+            timebase-frequency = <19200000>;
+            status = "disabled";
+        };
+    };
+    psci { compatible = "arm,psci-1.0"; method = "smc"; };
+    timer {
+        compatible = "arm,armv8-timer";
+        clock-frequency = <19200000>;
+        interrupts = <1 13 0xff08>, <1 14 0xff08>, <1 11 0xff08>, <1 12 0xff08>;
+        interrupt-parent = <&gic>;
+    };
+    armio: arm-io {
+        compatible = "simple-bus";
+        device_type = "arm-io";
+        #address-cells = <2>;
+        #size-cells = <2>;
+        ranges = <0 0 0 0x17a00000 0 0x160000>;
+        gic: interrupt-controller@0 {
+            unixnu,adt-name = "intc";
+            compatible = "arm,gic-v3";
+            reg = <0 0 0 0x10000>, <0 0x60000 0 0x100000>;
+            interrupt-controller;
+            #interrupt-cells = <3>;
+            #address-cells = <0>;
+            redistributor-stride = /bits/64 <0x20000>;
+        };
+    };
+};
